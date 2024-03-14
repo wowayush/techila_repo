@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>two array display</title>
+  </head>
+  <body>
+    <div class="conatiner">
+      <div class="sub-container">
+        <h1>Given Array : [89, 512, 45, 14, [41, 65, 94], 95]</h1>
+        <button onclick="calvalue()">flat element</button>
+        <div class="span-class">
+          <h1>Result Array :</h1>
+          <h1 id="showResult"></h1>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let arr = [89, 512, 45, 14, [41, 65, 94], 95];
+    let resultArray = [];
+
+
+    for (let index = 0; index < arr.length; index++) {
+      let currentElementType = typeof arr[index];
+
+     
+      if (currentElementType === "object") {
+        let InnerArray = arr[index];
+
+        InnerArray.forEach((Element) => {
+          let popObjectElement = Element;
+          resultArray.push(popObjectElement);
+        });
+      } else if (currentElementType === "number") {
+        let popNumberElement = arr[index];
+        resultArray.push(popNumberElement);
+      }
+    }
+
+    let resultDisplay = document.getElementById("showResult");
+    function calvalue() {
+      resultDisplay.innerHTML = resultArray;
+    }
+  </script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+
+    <label for="myTextBox">Enter Text:</label>
+    <input type="text" id="myTextBox" onchange="TextChange()">
+    
+    <p id="displayText"></p>
+
+    <script>
+        function TextChange() {
+            var textBoxValue = document.getElementById('myTextBox').value;
+            document.getElementById('displayText').innerText ='Text changed to: ' + textBoxValue;
+        }
+    </script>
+
+</body>
+</html>

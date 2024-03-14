@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>enter firstentry </label>
+    <input type="number" id="firstentry" onchange="handlechange()">
+   <select id="picklist" onchange="handlechange()">
+    <option value="null">select</option>
+    <option value="+">addition</option>
+    <option value="-">substraction</option>
+    <option value="*">multipication</option>
+    <option value="/">divison</option>
+</select>
+    <label>enter secondentry</label>
+    <input type="number" id="secondentry" onchange="handlechange()">
+    <label> Result </label>
+    <input type="number"  id="showthedata" readonly="true" ></input> 
+<script>
+    const first = document.getElementById("firstentry")
+    const pickcon = document.getElementById("picklist")
+    const sec = document.getElementById("secondentry")
+    const resultdisplay = document.getElementById("showthedata");
+    function handlechange(){
+        let result;
+    if(pickcon.value=="+"){
+        Number(first);
+        Number(sec);
+       result =(first.value) + (sec.value);
+    
+    }
+    if(pickcon.value=="-")
+    {
+        Number(first);
+        Number(sec);
+       result =(first.value)-(sec.value);
+    }
+    if(pickcon.value=="*")
+    {
+        Number(first);
+        Number(sec);
+       result =(first.value)*(sec.value);
+    
+    }
+    if(pickcon.value=="/")
+    {
+        Number(first);
+        Number(sec);
+       result =(first.value)/(sec.value);
+    
+    }
+    resultdisplay.value = result;
+}
+</script>
+</body>
+</html>
